@@ -1,5 +1,4 @@
 # ckeditor-html5-video
-HTML5 video plugin for CKEditor
 
 ## Introduction
 ckeditor-html5-video is simple HTML5 video plugin for CKEditor that is transformed version of [ckeditor-html5-audio](https://github.com/iametza/ckeditor-html5-audio).
@@ -27,3 +26,5 @@ If you want to add the plugin manually, you will need to:
 For more information, please look through ckeditor-html5-audio's documentation on
 * **[Github](https://github.com/iametza/ckeditor-html5-audio)**
 * **[CKEditor's plugin page](http://ckeditor.com/addon/html5audio)**
+
+I'd like to give special thanks to **[@aldatsa](https://github.com/aldatsa)** and other contributors of **ckeditor-html5-audio team**.
