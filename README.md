@@ -17,7 +17,7 @@ If you want to add the plugin manually, you will need to:
     config.extraPlugins = 'html5video';
     ```
 
-3. Download and configure all its dependencies, too (e.g. widget, widgetselection, clipboard, lineutils).
+3. Download and configure all its dependencies, too (e.g. widget, widgetselection, clipboard, lineutils). Moreover, if you use a GNU/Linux distro you need to set the right permissions for the folders and files.
 
 ### Add-on Dependencies
 
