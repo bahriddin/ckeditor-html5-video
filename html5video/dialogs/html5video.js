@@ -41,13 +41,23 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                 } ]
             },
             {
+                type: 'checkbox',
+                id: 'responsive',
+                label: editor.lang.html5video.responsive,
+                setup: function( widget ) {
+                    this.setValue( widget.data.responsive );
+                },
+                commit: function( widget ) {
+                    widget.setData( 'responsive', this.getValue()?'true':'' );
+                }
+            },
+            {
                 type: 'hbox',
                 id: 'size',
                 children: [ {
                     type: 'text',
                     id: 'width',
                     label: editor.lang.common.width,
-                    'default': 400,
                     setup: function( widget ) {
                         if ( widget.data.width ) {
                             this.setValue( widget.data.width );
@@ -61,7 +71,6 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                     type: 'text',
                     id: 'height',
                     label: editor.lang.common.height,
-                    'default': 300,
                     setup: function( widget ) {
                         if ( widget.data.height ) {
                             this.setValue( widget.data.height );
