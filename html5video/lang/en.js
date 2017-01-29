@@ -12,4 +12,4 @@ CKEDITOR.plugins.setLang( 'html5video', 'en', {
     yes: 'Yes',
     no: 'No',
 	responsive: 'Responsive width'
-});
+} );
