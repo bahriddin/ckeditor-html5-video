@@ -10,5 +10,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'en', {
     advanced: 'Advanced',
     autoplay: 'Autoplay?',
     yes: 'Yes',
-    no: 'No'
+    no: 'No',
+	responsive: 'Responsive width'
 } );
