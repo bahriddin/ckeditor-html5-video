@@ -10,5 +10,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'de', {
     advanced: 'Erweitert',
     autoplay: 'Autoplay?',
     yes: 'Ja',
-    no: 'Nein'
+    no: 'Nein',
+    controls: 'Steuerelemente anzeigen'
 } );

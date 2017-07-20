@@ -10,5 +10,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'uk', {
     advanced: 'Додатково',
     autoplay: 'Автовідтворення?',
     yes: 'Так',
-    no: 'Ні'
+    no: 'Ні',
+    controls: 'Показати елементи керування?'
 } );

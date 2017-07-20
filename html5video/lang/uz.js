@@ -10,5 +10,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'uz', {
     advanced: 'Kengaytrilgan',
     autoplay: 'Avtoijro?',
     yes: 'Ha',
-    no: 'Yo‘q'
+    no: 'Yo‘q',
+    controls: 'Tekshiruvlarni ko‘rsatish'
 } );
