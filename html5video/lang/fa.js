@@ -11,5 +11,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'fa', {
     autoplay: 'پخش خودکار؟',
     yes: 'بله',
     no: 'خیر',
-    responsive: 'عرض واکنشگرا'
+    responsive: 'عرض واکنشگرا',
+    controls: 'نمایش کنترل؟'
 } );

@@ -11,5 +11,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'zh-cn', {
     autoplay: '自动播放',
     yes: '是',
     no: '否',
-    responsive: '自动宽度'
+    responsive: '自动宽度',
+    controls: '显示控件？'
 } );

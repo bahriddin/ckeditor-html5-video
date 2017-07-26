@@ -10,5 +10,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'eu', {
     advanced: 'Aurreratua',
     autoplay: 'Automatikoki erreproduzitu?',
     yes: 'Bai',
-    no: 'Ez'
+    no: 'Ez',
+    controls: 'Erakutsi kontrolak?'
 } );

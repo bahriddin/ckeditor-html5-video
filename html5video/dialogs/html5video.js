@@ -52,6 +52,17 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                 }
             },
             {
+                type: 'checkbox',
+                id: 'controls',
+                label: editor.lang.html5video.controls,
+                setup: function (widget) {
+                    this.setValue(widget.data.controls);
+                },
+                commit: function (widget) {
+                    widget.setData('controls', this.getValue() ? 'true' : '');
+                }
+            },
+            {
                 type: 'hbox',
                 id: 'size',
                 children: [ {

@@ -12,7 +12,7 @@ CKEDITOR.plugins.add( 'html5video', {
              *  - video tags with src, controls, width and height attributes.
              */
             allowedContent: 'div[data-responsive](!ckeditor-html5-video){text-align,float,margin-left,margin-right}; video[src,controls,autoplay,width, height]{max-width,height};',
-            requiredContent: 'div(ckeditor-html5-video); video[src,controls];',
+            requiredContent: 'div(ckeditor-html5-video); video[src];',
             upcast: function( element ) {
                 return element.name === 'div' && element.hasClass( 'ckeditor-html5-video' );
             },
@@ -20,6 +20,7 @@ CKEDITOR.plugins.add( 'html5video', {
             init: function() {
                 var src = '';
                 var autoplay = '';
+                var controls = '';
                 var align = this.element.getStyle( 'text-align' );
 
                 var width = '';
@@ -31,8 +32,9 @@ CKEDITOR.plugins.add( 'html5video', {
                     src = this.element.getChild( 0 ).getAttribute( 'src' );
                     width = this.element.getChild( 0 ).getAttribute( 'width' );
                     height = this.element.getChild( 0 ).getAttribute( 'height' );
-                    autoplay = this.element.getChild( 0 ).getAttribute( 'autoplay' );
-										responsive = this.element.getAttribute( 'data-responsive' );
+                    autoplay = this.element.getChild(0).getAttribute('autoplay');
+                    controls = this.element.getChild(0).getAttribute('controls');
+					responsive = this.element.getAttribute( 'data-responsive' );
                 }
 
                 if ( src ) {
@@ -59,6 +61,10 @@ CKEDITOR.plugins.add( 'html5video', {
                     if ( responsive ) {
                         this.setData( 'responsive', responsive );	
                     }
+
+                    if (controls) {
+                        this.setData('controls', controls);
+                    }
                 }
             },
             data: function() {
@@ -69,7 +75,9 @@ CKEDITOR.plugins.add( 'html5video', {
                         // Create a new <video> element.
                         var videoElement = new CKEDITOR.dom.element( 'video' );
                         // Set the controls attribute.
-                        videoElement.setAttribute( 'controls', 'controls' );
+                        if (this.data.controls) {
+                            videoElement.setAttribute('controls', 'controls');
+                        }
                         // Append it to the container of the plugin.
                         this.element.append( videoElement );
                     }
@@ -110,6 +118,14 @@ CKEDITOR.plugins.add( 'html5video', {
                         this.element.getChild( 0 ).setAttribute( 'autoplay', 'autoplay' );
                     } else {
                         this.element.getChild( 0 ).removeAttribute( 'autoplay' );
+                    }
+                }
+
+                if (this.element.getChild(0)) {
+                    if (this.data.controls) {
+                        this.element.getChild(0).setAttribute('controls', 'controls');
+                    } else {
+                        this.element.getChild(0).removeAttribute('controls');
                     }
                 }
             }

@@ -11,5 +11,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'ru', {
     autoplay: 'Автовоспроизведение',
     yes: 'Да',
     no: 'Нет',
-    responsive: 'Адаптивная ширина'
+    responsive: 'Адаптивная ширина',
+    controls: 'Показать элементы управления?'
 } );
