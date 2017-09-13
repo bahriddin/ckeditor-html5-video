@@ -1,6 +1,6 @@
 CKEDITOR.plugins.add( 'html5video', {
     requires: 'widget',
-    lang: 'de,en,eu,es,ru,uk,fr',
+    lang: 'de,en,eu,es,ru,uk,fr,pt,pt-br',
     icons: 'html5video',
     init: function( editor ) {
         editor.widgets.add( 'html5video', {
