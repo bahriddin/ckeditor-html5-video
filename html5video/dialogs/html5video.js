@@ -164,6 +164,23 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                         commit: function( widget ) {
                             widget.setData( 'autoplay', this.getValue() );
                         }
+                    }, {
+                        type: 'radio',
+                        id: 'loop',
+                        label: editor.lang.html5video.loop,
+                        items: [
+                            [editor.lang.html5video.yes, 'yes'],
+                            [editor.lang.html5video.no, 'no']
+                        ],
+                        'default': 'no',
+                        setup: function( widget ) {
+                            if ( widget.data.loop ) {
+                                this.setValue( widget.data.loop );
+                            }
+                        },
+                        commit: function( widget ) {
+                            widget.setData( 'loop', this.getValue() );
+                        }
                     } ]
                 } ]
             } ]
