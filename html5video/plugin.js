@@ -96,6 +96,7 @@ CKEDITOR.plugins.add( 'html5video', {
                             this.element.getChild( 0 ).setStyle( 'max-width', '100%' );
                             this.element.getChild( 0 ).setStyle( 'height', 'auto' );
                     } else {
+			    this.element.removeAttribute("data-responsive");
                             this.element.getChild( 0 ).removeStyle( 'max-width' );
                             this.element.getChild( 0 ).removeStyle( 'height' );
                     }								
