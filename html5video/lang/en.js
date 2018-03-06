@@ -13,5 +13,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'en', {
     no: 'No',
     loop: 'Loop?',
     responsive: 'Responsive width',
-    controls: 'Show controls'
+    controls: 'Show controls',
+    poster: 'Thumbnail'
 } );
