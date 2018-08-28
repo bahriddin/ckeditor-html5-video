@@ -9,6 +9,8 @@ CKEDITOR.plugins.setLang( 'html5video', 'eu', {
     btnUpload: 'Bidali zerbitzarira',
     advanced: 'Aurreratua',
     autoplay: 'Automatikoki erreproduzitu?',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: 'Bai',
     no: 'Ez',
     controls: 'Erakutsi kontrolak?'

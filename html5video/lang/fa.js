@@ -9,6 +9,8 @@ CKEDITOR.plugins.setLang( 'html5video', 'fa', {
     btnUpload: 'ارسال به سرور',
     advanced: 'پیشرفته',
     autoplay: 'پخش خودکار؟',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: 'بله',
     no: 'خیر',
     responsive: 'عرض واکنشگرا',

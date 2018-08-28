@@ -9,6 +9,8 @@ CKEDITOR.plugins.setLang( 'html5video', 'pt-br', {
     btnUpload: 'Enviar para o servidor',
     advanced: 'Avançado',
     autoplay: 'Autoplay?',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: 'Sim',
     no: 'Não',
     responsive: 'Largura responsiva',

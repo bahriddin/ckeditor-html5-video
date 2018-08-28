@@ -35,7 +35,9 @@ CKEDITOR.plugins.add( 'html5video', {
                     width = this.element.getChild( 0 ).getAttribute( 'width' );
                     height = this.element.getChild( 0 ).getAttribute( 'height' );
                     autoplay = this.element.getChild(0).getAttribute('autoplay');
+                    allowdownload = !this.element.getChild( 0 ).getAttribute( 'controlslist' );
                     loop = this.element.getChild( 0 ).getAttribute( 'loop' );
+                    advisorytitle = this.element.getChild( 0 ).getAttribute( 'title' );
                     controls = this.element.getChild(0).getAttribute('controls');
 					responsive = this.element.getAttribute( 'data-responsive' );
                     poster = this.element.getChild( 0 ).getAttribute( 'poster' );
@@ -62,10 +64,18 @@ CKEDITOR.plugins.add( 'html5video', {
                         this.setData( 'autoplay', 'yes' );
                     }
 
+                    if ( allowdownload ) {
+                        this.setData( 'allowdownload', 'yes' );
+                    }
+
                     if ( loop ) {
                         this.setData( 'loop', 'yes' );
                     }
-										
+								
+                    if ( advisorytitle ) {
+                        this.setData( 'advisorytitle', advisorytitle );
+                    }
+		
                     if ( responsive ) {
                         this.setData( 'responsive', responsive );	
                     }
@@ -134,17 +144,25 @@ CKEDITOR.plugins.add( 'html5video', {
                     } else {
                         this.element.getChild( 0 ).removeAttribute( 'autoplay' );
                     }
-                }
 
-                if ( this.element.getChild( 0 ) ) {
                     if ( this.data.loop === 'yes' ) {
                         this.element.getChild( 0 ).setAttribute( 'loop', 'loop' );
                     } else {
                         this.element.getChild( 0 ).removeAttribute( 'loop' );
                     }
-                }
 
-                if (this.element.getChild(0)) {
+                    if ( this.data.allowdownload === 'yes' ) {
+                        this.element.getChild( 0 ).removeAttribute( 'controlslist' );
+                    } else {
+                        this.element.getChild( 0 ).setAttribute( 'controlslist', 'nodownload' );
+                    }
+
+                    if ( this.data.advisorytitle ) {
+                        this.element.getChild( 0 ).setAttribute( 'title', this.data.advisorytitle );
+                    } else {
+                        this.element.getChild( 0 ).removeAttribute( 'title' );
+                    }
+
                     if (this.data.controls) {
                         this.element.getChild(0).setAttribute('controls', 'controls');
                     } else {
