@@ -6,7 +6,8 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
         contents: [ {
             id: 'info',
             label: editor.lang.html5video.infoLabel,
-            elements: [ {
+            elements: [ 
+            {
                 type: 'vbox',
                 padding: 0,
                 children: [
@@ -52,16 +53,36 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                 }
             },
             {
-                type: 'text',
-                id: 'poster',
-                label: editor.lang.html5video.poster,
-                align: 'right',
-                setup: function( widget ) {
-                    this.setValue( widget.data.poster );
-                },
-                commit: function( widget ) {
-                    widget.setData( 'poster', this.getValue() );
-                }
+                type: 'vbox',
+                padding: 0,
+                
+                children: [{
+                    type: 'hbox',
+                    widths: [ '365px', '110px' ],
+                    align: 'right',
+                    children: [ {
+                        type: 'text',
+                        id: 'poster',
+                        label: editor.lang.html5video.poster,
+                        setup: function( widget ) {
+                            this.setValue( widget.data.poster );
+                        },
+                        commit: function( widget ) {
+                            widget.setData( 'poster', this.getValue() );
+                        }
+                    },
+                    {
+                        type: 'button',
+                        id: 'browseposter',
+                        // v-align with the 'txtUrl' field.
+                        // TODO: We need something better than a fixed size here.
+                        style: 'display:inline-block;margin-top:14px;',
+                        align: 'center',
+                        label: editor.lang.common.browseServer,
+                        hidden: true,
+                        filebrowser:{action:"Browse",target:"info:poster",url:editor.config.filebrowserImageBrowseUrl}
+                    } ]
+                }]
             },
             {
                 type: 'checkbox',
