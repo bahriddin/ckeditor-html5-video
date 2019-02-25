@@ -9,6 +9,8 @@ CKEDITOR.plugins.setLang( 'html5video', 'zh-cn', {
     btnUpload: '上传',
     advanced: '高级',
     autoplay: '自动播放',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: '是',
     no: '否',
     responsive: '自动宽度',

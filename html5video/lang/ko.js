@@ -9,6 +9,8 @@ CKEDITOR.plugins.setLang( 'html5video', 'ko', {
     btnUpload: '서버로 전송',
     advanced: '고급',
     autoplay: '자동재생?',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: '네',
     no: '아니오',
     loop: '무한반복?',

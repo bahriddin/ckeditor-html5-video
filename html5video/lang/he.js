@@ -10,6 +10,8 @@ CKEDITOR.plugins.setLang('html5video', 'he', {
     btnUpload: 'שלח לשרת',
     advanced: 'מתקדם',
     autoplay: 'ניגון אוטומטי?',
+    allowdownload: 'Allow download?',
+    advisorytitle: 'Advisory title',
     yes: 'כן',
     no: 'לא',
     responsive: 'רוחב רספונסיבי'

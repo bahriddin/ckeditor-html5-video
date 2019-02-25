@@ -177,9 +177,10 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
             label: editor.lang.html5video.advanced,
             elements: [ {
                 type: 'vbox',
-                padding: 0,
+                padding: 10,
                 children: [ {
                     type: 'hbox',
+                    widths: ["33%", "33%", "33%"],
                     children: [ {
                         type: 'radio',
                         id: 'autoplay',
@@ -197,7 +198,8 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                         commit: function( widget ) {
                             widget.setData( 'autoplay', this.getValue() );
                         }
-                    }, {
+                    }, 
+                    {
                         type: 'radio',
                         id: 'loop',
                         label: editor.lang.html5video.loop,
@@ -213,6 +215,41 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                         },
                         commit: function( widget ) {
                             widget.setData( 'loop', this.getValue() );
+                        }
+                    },
+                    {
+                        type: 'radio',
+                        id: 'allowdownload',
+                        label: editor.lang.html5video.allowdownload,
+                        items: [
+                            [editor.lang.html5video.yes, 'yes'],
+                            [editor.lang.html5video.no, 'no']
+                        ],
+                        'default': 'no',
+                        setup: function( widget ) {
+                            if ( widget.data.allowdownload ) {
+                                this.setValue(widget.data.allowdownload);
+                            }
+                        },
+                        commit: function( widget ) {
+                            widget.setData( 'allowdownload', this.getValue() );
+                        }
+                    } ]
+                }, 
+                {
+                    type: 'hbox',
+                    children: [ {
+                        type: "text",
+                        id: 'advisorytitle',
+                        label: editor.lang.html5video.advisorytitle,
+                        'default': '',
+                        setup: function( widget ) {
+                            if ( widget.data.advisorytitle ) {
+                                this.setValue(widget.data.advisorytitle);
+                            }
+                        },
+                        commit: function( widget ) {
+                            widget.setData( 'advisorytitle', this.getValue() );
                         }
                     } ]
                 } ]
