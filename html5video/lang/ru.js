@@ -9,10 +9,13 @@ CKEDITOR.plugins.setLang( 'html5video', 'ru', {
     btnUpload: 'Загрузить на сервер',
     advanced: 'Дополнительно',
     autoplay: 'Автовоспроизведение',
-    allowdownload: 'Разрешить загрузку?',
+    allowdownload: 'Разрешить загрузку',
     advisorytitle: 'Заголовок',
     yes: 'Да',
     no: 'Нет',
     responsive: 'Адаптивная ширина',
-    controls: 'Показать элементы управления?'
+    controls: 'Показать элементы управления',
+    loop: 'Зациклить',
+    poster: 'Постер',
+    advisorytitle: 'Пояснительный текст'
 } );
