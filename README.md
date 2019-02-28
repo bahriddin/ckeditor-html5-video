@@ -5,7 +5,7 @@ ckeditor-html5-video is simple HTML5 video plugin for CKEditor that is transform
 
 If you want to add the plugin manually, you will need to:
 
-1. Extract the html5audio folder into the plugins folder of your CKEditor installation. Example:
+1. Extract the html5video folder into the plugins folder of your CKEditor installation. Example:
 
     ```
     http://example.com/ckeditor/plugins/html5video
@@ -23,8 +23,6 @@ If you want to add the plugin manually, you will need to:
 
 [Widget](http://ckeditor.com/addon/widget)
 
-For more information, please look through ckeditor-html5-audio's documentation on
-* **[Github](https://github.com/iametza/ckeditor-html5-audio)**
-* **[CKEditor's plugin page](http://ckeditor.com/addon/html5audio)**
-
-I'd like to give special thanks to **[@aldatsa](https://github.com/aldatsa)** and other contributors of **ckeditor-html5-audio team**.
+For more information, please look through ckeditor-html5-video's documentation on
+* **[Github](https://github.com/bahriddin/ckeditor-html5-video)**
+* **[CKEditor's plugin page](http://ckeditor.com/addon/html5video)**
