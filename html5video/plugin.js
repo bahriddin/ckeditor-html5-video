@@ -11,7 +11,7 @@ CKEDITOR.plugins.add( 'html5video', {
              *  - div-s with text-align,float,margin-left,margin-right inline style rules and required ckeditor-html5-video class.
              *  - video tags with src, controls, width and height attributes.
              */
-            allowedContent: 'div[data-responsive](!ckeditor-html5-video){text-align,float,margin-left,margin-right}; video[src,poster,controls,autoplay,width, height,loop]{max-width,height};',
+            allowedContent: 'div[data-responsive](!ckeditor-html5-video){text-align,float,margin-left,margin-right}; video[src,poster,controls,autoplay,width,height,loop,muted]{max-width,height};',
             requiredContent: 'div(ckeditor-html5-video); video[src];',
             upcast: function( element ) {
                 return element.name === 'div' && element.hasClass( 'ckeditor-html5-video' );
@@ -26,7 +26,8 @@ CKEDITOR.plugins.add( 'html5video', {
 
                 var width = '';
                 var height = '';
-                var poster = '';
+				var poster = '';
+				var muted = '';
 
                 // If there's a child (the video element)
                 if ( this.element.getChild( 0 ) ) {
@@ -40,7 +41,8 @@ CKEDITOR.plugins.add( 'html5video', {
                     advisorytitle = this.element.getChild( 0 ).getAttribute( 'title' );
                     controls = this.element.getChild(0).getAttribute('controls');
 					responsive = this.element.getAttribute( 'data-responsive' );
-                    poster = this.element.getChild( 0 ).getAttribute( 'poster' );
+					poster = this.element.getChild( 0 ).getAttribute( 'poster' );
+					muted = this.element.getChild( 0 ).getAttribute( 'muted' );
                 }
 
                 if ( src ) {
@@ -86,6 +88,10 @@ CKEDITOR.plugins.add( 'html5video', {
 
                     if ( poster ) {
                         this.setData('poster', poster);
+					}
+
+					if ( muted ) {
+                        this.setData('muted', 'yes');
                     }
                 }
             },
@@ -139,6 +145,9 @@ CKEDITOR.plugins.add( 'html5video', {
                 }
 
                 if ( this.element.getChild( 0 ) ) {
+					
+					this.element.getChild( 0 ).setAttribute( 'muted', this.data.muted === 'yes' ? 'muted' : '' );
+
                     if ( this.data.autoplay === 'yes' ) {
                         this.element.getChild( 0 ).setAttribute( 'autoplay', 'autoplay' );
                     } else {
@@ -149,7 +158,7 @@ CKEDITOR.plugins.add( 'html5video', {
                         this.element.getChild( 0 ).setAttribute( 'loop', 'loop' );
                     } else {
                         this.element.getChild( 0 ).removeAttribute( 'loop' );
-                    }
+					}
 
                     if ( this.data.allowdownload === 'yes' ) {
                         this.element.getChild( 0 ).removeAttribute( 'controlslist' );
