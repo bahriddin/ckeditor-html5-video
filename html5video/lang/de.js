@@ -13,5 +13,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'de', {
     advisorytitle: 'Advisory title',
     yes: 'Ja',
     no: 'Nein',
-    controls: 'Steuerelemente anzeigen'
+    controls: 'Steuerelemente anzeigen',
+    muted : 'stumm geschaltet'
 } );
