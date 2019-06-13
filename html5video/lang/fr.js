@@ -16,5 +16,6 @@ CKEDITOR.plugins.setLang( 'html5video', 'fr', {
     loop: 'Loop?',
     responsive: 'Taille sensible',
     controls: 'Afficher les contrôles ?',
-    poster: 'Vignette'
+    poster: 'Vignette',
+    muted: 'En sourdine ?'
 } );
