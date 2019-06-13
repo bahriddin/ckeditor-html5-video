@@ -10,7 +10,7 @@ CKEDITOR.plugins.setLang( 'html5video', 'fr', {
     advanced: 'Avancé',
     autoplay: 'Jouer automatiquement ?',
     allowdownload: 'Activer le téléchargement ?',
-    advisorytitle: 'Titre Description',
+    advisorytitle: 'Infobulle',
     yes: 'Oui',
     no: 'Non',
     loop: 'Loop?',
