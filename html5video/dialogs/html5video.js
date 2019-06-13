@@ -219,6 +219,24 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                     },
                     {
                         type: 'radio',
+                        id: 'muted',
+                        label: editor.lang.html5video.muted,
+                        items: [
+                            [editor.lang.html5video.yes, 'yes'],
+                            [editor.lang.html5video.no, 'no']
+                        ],
+                        'default': 'no',
+                        setup: function( widget ) {
+                            if ( widget.data.muted ) {
+                                this.setValue(widget.data.muted);
+                            }
+                        },
+                        commit: function( widget ) {
+                            widget.setData( 'muted', this.getValue() );
+                        }
+                    },
+                    {
+                        type: 'radio',
                         id: 'allowdownload',
                         label: editor.lang.html5video.allowdownload,
                         items: [
