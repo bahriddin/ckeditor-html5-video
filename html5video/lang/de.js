@@ -9,9 +9,12 @@ CKEDITOR.plugins.setLang( 'html5video', 'de', {
     btnUpload: 'Zum Server senden',
     advanced: 'Erweitert',
     autoplay: 'Autoplay?',
-    allowdownload: 'Allow download?',
-    advisorytitle: 'Advisory title',
+    allowdownload: 'Download ermöglichen?',
+    advisorytitle: 'Titel Beschreibung',
     yes: 'Ja',
     no: 'Nein',
-    controls: 'Steuerelemente anzeigen'
+    loop: 'Loop?',
+    responsive: 'dynamische Grösse',
+    controls: 'Steuerelemente anzeigen',
+    poster: 'Vorschaubild'
 } );
