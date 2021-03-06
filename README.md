@@ -19,6 +19,14 @@ If you want to add the plugin manually, you will need to:
 
 3. Download and configure all its dependencies, too (e.g. widget, widgetselection, clipboard, lineutils). Moreover, if you use a GNU/Linux distro you need to set the right permissions for the folders and files.
 
+4. Optionally configure default selections in your ckeditor config. For instance you can configure controls to be off by default (previous default) with
+
+```
+config.html5video = {
+	controls: false
+};
+```
+
 ### Add-on Dependencies
 
 [Widget](http://ckeditor.com/addon/widget)
