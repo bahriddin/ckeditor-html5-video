@@ -19,75 +19,79 @@ CKEDITOR.plugins.add( 'html5video', {
             },
             dialog: 'html5video',
             init: function() {
-                var src = '';
-                var autoplay = '';
-                var loop = '';
-                var controls = '';
-                var align = this.element.getStyle( 'text-align' );
+                var defaultConfig = {
+                    src: '',
+                    autoplay: '',
+                    loop: '',
+                    controls: true,
+                    align: this.element.getStyle( 'text-align' ),
 
-                var width = '';
-                var height = '';
-                var poster = '';
+                    width: '',
+                    height: '',
+                    poster: ''
+                }
+
+                var config = CKEDITOR.tools.extend(defaultConfig, editor.config.html5video || {}, true);
 
                 // If there's a child (the video element)
                 if ( this.element.getChild( 0 ) ) {
                     // get it's attributes.
-                    src = this.element.getChild( 0 ).getAttribute( 'src' );
-                    width = this.element.getChild( 0 ).getAttribute( 'width' );
-                    height = this.element.getChild( 0 ).getAttribute( 'height' );
-                    autoplay = this.element.getChild(0).getAttribute('autoplay');
-                    allowdownload = !this.element.getChild( 0 ).getAttribute( 'controlslist' );
-                    loop = this.element.getChild( 0 ).getAttribute( 'loop' );
-                    advisorytitle = this.element.getChild( 0 ).getAttribute( 'title' );
-                    controls = this.element.getChild(0).getAttribute('controls');
-					responsive = this.element.getAttribute( 'data-responsive' );
-                    poster = this.element.getChild( 0 ).getAttribute( 'poster' );
+                    config.src = this.element.getChild( 0 ).getAttribute( 'src' );
+                    config.width = this.element.getChild( 0 ).getAttribute( 'width' );
+                    config.height = this.element.getChild( 0 ).getAttribute( 'height' );
+                    config.autoplay = this.element.getChild(0).getAttribute('autoplay');
+                    config.allowdownload = !this.element.getChild( 0 ).getAttribute( 'controlslist' );
+                    config.loop = this.element.getChild( 0 ).getAttribute( 'loop' );
+                    config.advisorytitle = this.element.getChild( 0 ).getAttribute( 'title' );
+                    config.controls = this.element.getChild(0).getAttribute('controls');
+					config.responsive = this.element.getAttribute( 'data-responsive' );
+                    config.poster = this.element.getChild( 0 ).getAttribute( 'poster' );
                 }
 
-                if ( src ) {
-                    this.setData( 'src', src );
+                if ( config.src ) {
+                    this.setData( 'src', config.src );
+                }
 
-                    if ( align ) {
-                        this.setData( 'align', align );
-                    } else {
-                        this.setData( 'align', 'none' );
-                    }
+                if ( config.align ) {
+                    this.setData( 'align', config.align );
+                } else {
+                    this.setData( 'align', 'none' );
+                }
 
-                    if ( width ) {
-                        this.setData( 'width', width );
-                    }
+                if ( config.width ) {
+                    this.setData( 'width', config.width );
+                }
 
-                    if ( height ) {
-                        this.setData( 'height', height );
-                    }
+                if ( config.height ) {
+                    this.setData( 'height', config.height );
+                }
 
-                    if ( autoplay ) {
-                        this.setData( 'autoplay', 'yes' );
-                    }
+                if ( config.autoplay ) {
+                    this.setData( 'autoplay', 'yes' );
+                }
 
-                    if ( allowdownload ) {
-                        this.setData( 'allowdownload', 'yes' );
-                    }
+                if ( config.allowdownload ) {
+                    this.setData( 'allowdownload', 'yes' );
+                }
 
-                    if ( loop ) {
-                        this.setData( 'loop', 'yes' );
-                    }
-								
-                    if ( advisorytitle ) {
-                        this.setData( 'advisorytitle', advisorytitle );
-                    }
-		
-                    if ( responsive ) {
-                        this.setData( 'responsive', responsive );	
-                    }
+                if ( config.loop ) {
+                    this.setData( 'loop', 'yes' );
+                }
+                            
+                if ( config.advisorytitle ) {
+                    this.setData( 'advisorytitle', config.advisorytitle );
+                }
 
-                    if (controls) {
-                        this.setData('controls', controls);
-                    }
+                if ( config.responsive ) {
+                    this.setData( 'responsive', config.responsive );	
+                }
 
-                    if ( poster ) {
-                        this.setData('poster', poster);
-                    }
+                if (config.controls) {
+                    this.setData('controls', config.controls);
+                }
+
+                if ( config.poster ) {
+                    this.setData('poster', config.poster);
                 }
             },
             data: function() {
