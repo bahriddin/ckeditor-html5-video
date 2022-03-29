@@ -9,9 +9,12 @@ CKEDITOR.plugins.setLang( 'html5video', 'eu', {
     btnUpload: 'Bidali zerbitzarira',
     advanced: 'Aurreratua',
     autoplay: 'Automatikoki erreproduzitu?',
-    allowdownload: 'Allow download?',
-    advisorytitle: 'Advisory title',
+    allowdownload: 'Deskarga onartu?',
+    advisorytitle: 'Aholku-izenburua',
     yes: 'Bai',
     no: 'Ez',
-    controls: 'Erakutsi kontrolak?'
+    loop: 'Begizta?',
+    responsive: 'Zabalera moldagarria',
+    controls: 'Erakutsi kontrolak',
+    poster: 'Koadro txikia'
 } );
